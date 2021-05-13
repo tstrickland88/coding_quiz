@@ -19,3 +19,8 @@ main{
     margin-top: 10vh;
     text-align: center;
 }
+
+.sel-btn{
+    width: 70%;
+    margin: 10px auto
+}
