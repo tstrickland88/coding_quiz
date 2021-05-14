@@ -118,3 +118,11 @@ function failed(){
     </div>
     </div>`
 }
+
+function saveHighscore(){
+    var initial=document.getElementById("initial").value.trim()
+    if(initial!=""){
+        
+    }
+}
+
