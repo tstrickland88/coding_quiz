@@ -55,10 +55,12 @@ interface.innerHTML = `<div>
 }
 
 
-    return new Promise(resolve => setTimeout(resolve, ms))
-} 
+function hidefeedback(){
+    var feedback= document.getElementById("feedback")
+    feedback.innerHTML = ""
+}
 
-async function selectthis(Userchoice){
+ function selectthis(Userchoice){
     var correctanswer=questions[curQuestion].answer 
     var feedback= document.getElementById("feedback")
 
@@ -67,7 +69,27 @@ async function selectthis(Userchoice){
     }else{
         feedback.innerHTML = "<h3> Incorrect </h3>"
     }
-   
+   setTimeout(hidefeedback,1000);
     curQuestion++
     createquestion()
 }
+
+function endquiz(){
+    clearInterval(quiztime)
+    var finalScore=time
+    var interface=document.getElementById("interface")
+    interface.innerHTML = `<div>
+    <div>
+        <h2>
+            You did Good! 
+        </h2>
+    </div>
+    <div>
+    <h3> You Scored ${time} Points</h3>
+
+        <button class="btn btn-success sel-btn" onclick=" " >
+        Add High Score
+        </button>
+    </div>
+    </div>`
+} 
