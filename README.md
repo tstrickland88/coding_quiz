@@ -5,6 +5,8 @@ Time is taken off for wrong answers, and highscores are logged.
 
 **LIVE:**
 
+https://tstrickland88.github.io/coding_quiz/
+
 ## Languages Used
 
 - JavaScript 
