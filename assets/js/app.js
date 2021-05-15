@@ -96,7 +96,7 @@ function endquiz(){
     <div>
     <h3> You Scored ${time} Points</h3>
 <p> Enter Your Initials:<input type="text" id="initial" max="4"/> </p> 
-        <button class="btn btn-success sel-btn" onclick=" " >
+        <button class="btn btn-success sel-btn" onclick="saveHighscore()" >
         Add High Score
         </button>
     </div>
@@ -122,7 +122,13 @@ function failed(){
 function saveHighscore(){
     var initial=document.getElementById("initial").value.trim()
     if(initial!=""){
-        
+        var highscores=JSON.parse(window.localStorage.getItem("highscores")) || []
+        var userscore={Score:time,
+            initial:initial
+        }
+        highscores.push(userscore)
+        window.localStorage.setItem("highscores",JSON.stringify(highscores) )
+        window.location.href="scores.html"
     }
 }
 
